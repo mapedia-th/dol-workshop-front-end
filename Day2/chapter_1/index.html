@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Leaflet Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+     
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav">
+                <div class="img-p0">
+                    <img src="Logo.png" alt="" width="80%"><br>
+                </div>
+
+                <div class="list-group-item list-group-item-action flex-column align-items-start active"
+                    id="thai_count">
+                    <h5 class="card-header">ค้นหาข้อมูล</h5>
+                    <div class="card-body">
+                        <form id="form_query">
+                            <div class="form-group">
+                                <label for="email">จังหวัด :</label>
+                                <select name="province" class="form-control" id="list_province">
+                                    <!-- <option value=""></option> -->
+                                </select>
+                            </div>
+                            <br>
+                            <button type="button" onclick="submit_filter()" class="btn btn-warning btn-block">Submit</button>
+                            <button type="button" onclick="clear_filter()" class="btn btn-warning btn-block">Clear</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="list-group-item list-group-item-action flex-column align-items-start active"
+                    id="thai_count">
+                    <h5 class="card-header">ค้นหาตำแหน่ง</h5>
+                    <div class="card-body">
+                        <form id="form_query2">
+                            <div class="form-group">
+                                <label for="latitude">Latitude :</label>
+                                <input class="form-control" type="text" id="latitude">
+                                <label for="longitude">Longitude :</label>
+                                <input class="form-control" type="text" id="longitude">
+                            </div>
+                            <br>
+                            <button type="button" onclick="submit_coodinate()" class="btn btn-warning btn-block">Submit</button>
+                            <button type="button" onclick="clear_marker()" class="btn btn-warning btn-block">Clear</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="list-group-item list-group-item-action flex-column align-items-start active"
+                    id="thai_count">
+                    <div class="card-body">
+                        <form id="form_query3">
+                            <button type="button" onclick="submit_current_location()" 
+                            class="btn btn-warning btn-block">ค้นหาตำแหน่งปัจจุบัน</button>
+                            <button type="button" onclick="clear_marker()" class="btn btn-warning btn-block">Clear</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-9">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script src="app.js"></script>
+
+</footer>
+</html>
