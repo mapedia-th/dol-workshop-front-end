@@ -154,6 +154,8 @@ function submit_coodinate() {
     markers.clearLayers();
     var latitude = $("#latitude").val();
     var longitude = $("#longitude").val();
+    console.log(latitude, longitude);
+
     map.setView([latitude, longitude], 16);
     var marker = L.marker([latitude, longitude]).addTo(map)
     .bindPopup("ตำแหน่ง<br>latitude : " + latitude + ", longitude : " + longitude).openPopup();
@@ -167,14 +169,3 @@ const search = new GeoSearch.GeoSearchControl({
     style: 'bar',
 });
 map.addControl(search);
-
-
-var measureControl = new L.Control.Measure({ position: 'topright' });
-measureControl.addTo(map);
-
-var easyPrint = L.easyPrint({
-    title: 'My awesome print button',
-    position: 'topright',
-    sizeModes: ['A4Portrait', 'A4Landscape']
-})
-easyPrint.addTo(map);
