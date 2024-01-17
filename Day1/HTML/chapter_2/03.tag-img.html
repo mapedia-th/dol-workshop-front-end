@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ==== start head ==== -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- title -->
+    <title>HTML Media Form & Table</title>
+    <!-- 10. favicon -->
+    <link rel="icon" href="../example-favicon.png" type="image/x-icon">
+    
+</head>
+
+<!-- ==== start body ==== -->
+<body>
+    <!-- 9. tag img -->
+    <img src="https://mapedia.co.th/assets/img/mapedia_LO.png" alt="Error image" title="logo mapedia" width="1000">
+
+
+    <div style="width: 40%;">
+        <!-- 11. create form  -->
+        <form>
+            <!-- input -->
+            <h5>input</h5>
+            <input type="text">
+            <hr>
+            <!-- text-area -->
+            <h5>textarea</h5>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <hr>
+            <!-- text-area -->
+            <h5>checkbox</h5>
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <label for="vehicle1"> I have a bike</label> <br>
+            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car"> 
+            <label for="vehicle2"> I have a car</label><br>
+            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+            <label for="vehicle3"> I have a boat</label>
+            <hr>
+            <!-- radio -->
+            <h5>radio</h5>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">HTML</label><br>
+            <input type="radio" id="css" name="fav_language" value="CSS">
+            <label for="css">CSS</label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">JavaScript</label>
+            <hr>
+            <!-- select -->
+            <h5>select</h5>
+            <label for="cars">Choose a car:</label>
+            <select name="cars" id="cars">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select>
+        </form>
+
+        <!-- 11. form type -->
+        <form method="post" action="#">
+            <h5>Type Text & Password</h5>
+            Text: <input type="text">
+            Password: <input type="password">
+            <hr>
+            <h5>Type File</h5>
+            <input type="file">
+            <hr>
+            <h5>Type Number</h5>
+            <input type="number">
+            <hr>
+            <h5>Type Email & URL</h5>
+            email: <input type="email" name="email">
+            url: <input type="url">
+            <hr>
+            <h5>Type date & time</h5>
+            date: <input type="date" >
+            time: <input type="time">
+        </form>
+
+    </div>
+    
+</body>
+
+</html>

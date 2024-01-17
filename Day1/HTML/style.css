@@ -1,0 +1,222 @@
+body {
+    color: rgb(0, 0, 0);
+}
+
+
+/* Tag Selector */
+/* p {
+    color: red;
+    text-align: center;
+    padding: 10px;
+} */
+
+.color-blue{
+    color:#3b82f6;
+}
+
+/* Class Selector */
+.text-red {
+    color: red;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Id Selector */
+#message {
+    color: red;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Union Selector */
+.text-red, #message {
+    color: red;
+    text-align: center;
+    padding: 10px;
+}
+
+.text-primary {
+    color: #3b82f6;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-style: italic;
+    font-variant: small-caps;
+}
+
+.font-ibm {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.fs-09 {
+    font-size: 0.9rem;
+}
+
+.fw-500 {
+    font-weight: bold;
+}
+
+.font-ita {
+    font-style: italic;
+}
+
+.variant {
+    font-variant: small-caps;
+}
+
+
+/* text-align */
+div.a {
+    text-align: center;
+  }
+  
+  div.b {
+    text-align: left;
+  }
+  
+  div.c {
+    text-align: right;
+  } 
+  
+  div.d {
+    text-align: justify;
+  } 
+
+/* list style */
+ul.a {
+    list-style-type: circle;
+  }
+  
+  ul.b {
+    list-style-type: square;
+  }
+  
+  ol.c {
+    list-style-type: upper-roman;
+  }
+  
+  ol.d {
+    list-style-type: lower-alpha;
+  }
+
+
+  /* box-model */
+  .box-model {
+    background-color: lightgrey;
+    width: 300px;
+    border: 15px solid green;
+    padding: 50px;
+    margin: 20px;
+  }
+
+  /* overflow */
+  .overflowTest {
+    background: #4CAF50;
+    color: white;
+    padding: 15px;
+    width: 50%;
+    height: 100px;
+    overflow: scroll;
+    border: 1px solid #ccc;
+  }
+
+  /* Flote */
+  .f-right {
+    float: right;
+  }
+
+  .div1 {
+    float: left;
+    padding: 10px;
+    border: 3px solid #73AD21;
+  }
+  
+  .div2 {
+    padding: 10px;
+    border: 3px solid red;
+  }
+  
+  .div3 {
+    float: left;
+    padding: 10px;  
+    border: 3px solid #73AD21;
+  }
+  
+  .div4 {
+    padding: 10px;
+    border: 3px solid red;
+    clear: left;
+  }
+
+  /* position */
+  div.relative {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    border: 3px solid #73AD21;
+  } 
+  
+  div.absolute {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 200px;
+    height: 100px;
+    border: 3px solid #73AD21;
+  }
+
+  /* flex box */
+  * {
+    box-sizing: border-box;
+  }
+  
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  .flex-item-left {
+    background-color: #f1f1f1;
+    padding: 10px;
+    flex: 50%;
+  }
+  
+  .flex-item-right {
+    background-color: dodgerblue;
+    padding: 10px;
+    flex: 50%;
+  }
+  
+  /* Responsive layout - makes a one column-layout instead of two-column layout */
+  @media (max-width: 800px) {
+    .flex-container {
+      flex-direction: column;
+    }
+  }
+
+  /* grid */
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+  }
+  
+  .grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+  }
+  
+  @media only screen and (max-width: 500px) {
+    .item1 { grid-area: 1 / span 3 / 2 / 4; }
+    .item2 { grid-area: 3 / 3 / 4 / 4; }
+    .item3 { grid-area: 2 / 1 / 3 / 2; }
+    .item4 { grid-area: 2 / 2 / span 2 / 3; }
+    .item5 { grid-area: 3 / 1 / 4 / 2; }
+    .item6 { grid-area: 2 / 3 / 3 / 4; }
+  }
