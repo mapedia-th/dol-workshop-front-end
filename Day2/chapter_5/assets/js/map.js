@@ -122,6 +122,11 @@ function clear_filter() {
     nsl_layer.clearLayers();
     bokdin_layer.clearLayers();
 
+    var nsl_filter = document.getElementById("nsl_filter");
+    nsl_filter.style.display = "none";
+    var bokdin_filter = document.getElementById("bokdin_filter");
+    bokdin_filter.style.display = "none";
+
     get_provinces();
 }
 
