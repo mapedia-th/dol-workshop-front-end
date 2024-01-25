@@ -89,6 +89,57 @@
         <ul class="sidebar-nav" id="sidebar-nav">
             <li class="nav-item mb-5">
                 <div class="card">
+                    <p class="legend mb-0 pb-0 fw-bold">Layer</p>
+                    <div class="card-body">
+                        <form>
+                            <div class="row mb-3">
+                                <div class="col-sm-12">
+                                    <label for="inputEmail3" class="form-label col-form-label-sm">Choose Layer</label>
+                                    <select id="layer" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                        <option value="nsl">nsl</option>
+                                        <option value="bokdin">bokdin</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button onclick="submit_layer()"
+                                type="button" class="btn btn-success"  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">ค้นหา</button>
+                                <button onclick="clear_filter()"
+                                type="button" class="btn btn-outline-secondary"  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">ล้างการค้นหา</button>
+                            </div>
+                        </form>
+                        <div id="nsl_filter" style="display: none;">
+                            <hr>
+                            <div class=" mb-3">
+                                <label for="nsllll" class="form-label col-form-label-sm mb-0">nsl filter</label>
+                                <input id="nsllll" class="form-control form-control-sm" type="text" placeholder="nsl filter">
+                            </div>
+                            <div class="text-center">
+                                <button 
+                                type="button" class="btn btn-success"  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">ค้นหา</button>
+                                <button 
+                                type="button" class="btn btn-outline-secondary"  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">ล้างการค้นหา</button>
+                            </div>
+                        </div>
+                        <div id="bokdin_filter" style="display: none;">
+                            <hr>
+                            <div class=" mb-3">
+                                <label for="bokdinnn" class="form-label col-form-label-sm mb-0">Bokdin filter</label>
+                                <input id="bokdinnn" class="form-control form-control-sm" type="text" placeholder="Bokdin filter">
+                            </div>
+                            <div class="text-center">
+                                <button 
+                                type="button" class="btn btn-success"  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">ค้นหา</button>
+                                <button 
+                                type="button" class="btn btn-outline-secondary"  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">ล้างการค้นหา</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item mb-5">
+                <div class="card">
                     <p class="legend mb-0 pb-0 fw-bold">ค้นหาข้อมูล</p>
                     <div class="card-body">
                         <form>

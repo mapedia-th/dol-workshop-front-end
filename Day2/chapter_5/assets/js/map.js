@@ -16,14 +16,14 @@ var th_pote_rice = L.tileLayer.wms("https://ogc.mapedia.co.th/geoserver/food4res
     format: 'image/png',
     attribution: '&copy; <a href="https://mapedia.co.th/">MAPEDIA</a>',
     transparent: true,
-}).addTo(map);
+});
 
 var landuse52 = L.tileLayer.wms("https://ogc.mapedia.co.th/geoserver/food4res/wms?", {
     layers: 'food4res:landuse52',
     format: 'image/png',
     attribution: '&copy; <a href="https://mapedia.co.th/">MAPEDIA</a>',
     transparent: true,
-}).addTo(map);
+});
 
 var provinces = L.layerGroup().addTo(map); //สร้างตัวแปลสำหรับเก็บเลเยอร์ จังหวัด
 var nsl_layer = L.layerGroup().addTo(map); //สร้างตัวแปลสำหรับเก็บเลเยอร์ การใช้ประโยชน์ที่ดิน
@@ -51,7 +51,7 @@ var provices_data = []; //สร้างตัวแปลสำหรับเ
 function get_provinces() {
     $.getJSON(`https://ogc.mapedia.co.th/api/v2/province/list`, function (data) {
         provices_data = data.result;
-        console.log(provices_data);
+        // console.log(provices_data);
         var geoJsonLayers = []; 
         var option_province = '<option value="ทั้งหมด">ทั้งหมด</option>'
         provices_data.forEach((e,i) => {
@@ -180,3 +180,51 @@ var easyPrint = L.easyPrint({
     sizeModes: ['A4Portrait', 'A4Landscape']
 })
 easyPrint.addTo(map);
+
+function submit_layer(){
+    var nsl_filter = document.getElementById("nsl_filter");
+    nsl_filter.style.display = "none";
+    var bokdin_filter = document.getElementById("bokdin_filter");
+    bokdin_filter.style.display = "none";
+
+    nsl_layer.clearLayers();
+    bokdin_layer.clearLayers();
+
+    var layer = $("#layer").val();
+    console.log(layer);
+    if(layer=='nsl'){
+        $.getJSON("nsl.geojson", function (data) {
+            var nsl_filter = document.getElementById("nsl_filter");
+            nsl_filter.style.display = "block";
+
+            var nsl = data.features
+            console.log(nsl);
+
+            if(nsl.length>0){
+                var nslLayers = {
+                    "type":"FeatureCollection",
+                    "features":nsl
+                };
+                L.geoJson(nslLayers,{color: 'red'}).addTo(nsl_layer)
+            }
+        })
+    }
+
+    if(layer=='bokdin'){
+        $.getJSON("bokdin.geojson", function (data) {
+            var bokdin_filter = document.getElementById("bokdin_filter");
+            bokdin_filter.style.display = "block";
+
+            var bokdin = data.features
+            console.log(bokdin);
+
+            if(bokdin.length>0){
+                var bokdinLayers = {
+                    "type":"FeatureCollection",
+                    "features":bokdin
+                };
+                L.geoJson(bokdinLayers).addTo(bokdin_layer)
+            }
+        })
+    }
+}
